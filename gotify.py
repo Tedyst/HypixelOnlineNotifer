@@ -7,10 +7,10 @@ class Server:
         self.token = token
 
 
-def sendMessage(server, message):
+def sendMessage(server, message, priority=5):
     data = {
         "message": message,
-        "priority": 2,
+        "priority": priority,
         "title": "Hypixel"
     }
     headers = {'X-Gotify-Key': str(server.token)}
@@ -19,4 +19,11 @@ def sendMessage(server, message):
         print(r.text)
         return
     print(r)
-    raise Exception("Idk what happened")
+    raise Exception("Cannot send the message to the Gotify server!")
+
+
+# This is for testing only, please ignore
+if __name__ == "__main__":
+    import config
+    server = Server(config.GOTIFY_URL, config.GOTIFY_TOKEN)
+    sendMessage(server, 'https://stoicatedy.ovh', 2)

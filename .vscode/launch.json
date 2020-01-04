@@ -7,6 +7,13 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "console": "internalConsole"
+        },
+        {
+            "name": "gotify.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/gotify.py",
+            "console": "internalConsole"
         }
     ]
 }

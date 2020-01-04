@@ -57,9 +57,9 @@ def updateClass(player):
     player.lastLogin = j["player"]["lastLogin"]
 
 
-def notify(text):
+def notify(text, priority=5):
     if usingGotify:
-        gotify.sendMessage(gotifyServer, text)
+        gotify.sendMessage(gotifyServer, text, priority=priority)
     else:
         print(text)
 
@@ -80,7 +80,9 @@ while True:
         updateClass(player)
         if (player.isOnline() != old):  # Status changed
             if player.isOnline() is True:
-                notify(player.name + " is now online on Hypixel!")
+                # This would make a notification sound
+                notify(player.name + " is now online on Hypixel!", 5)
             else:
-                notify(player.name + " is now offline on Hypixel!")
+                # This won't make a notification sound
+                notify(player.name + " is now offline on Hypixel!", 2)
         time.sleep(3)

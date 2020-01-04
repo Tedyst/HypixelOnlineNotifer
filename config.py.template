@@ -1,0 +1,7 @@
+HYPIXEL_API_KEY = ""
+GOTIFY_URL = "https://gotify.example.com/message"
+GOTIFY_TOKEN = ""
+PLAYERS = [
+    "1c57e151112f4da4a229ade98a4f0c0b",
+    "Tedyst"
+]

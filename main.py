@@ -23,9 +23,10 @@ class PlayerClass:
 
 
 if config.GOTIFY_URL and config.GOTIFY_TOKEN:
-    usingGotify = True
-    import gotify
-    gotifyServer = gotify.Server(config.GOTIFY_URL, config.GOTIFY_TOKEN)
+    if config.GOTIFY_TOKEN != "" and config.GOTIFY_URL != "":
+        usingGotify = True
+        import gotify
+        gotifyServer = gotify.Server(config.GOTIFY_URL, config.GOTIFY_TOKEN)
 
 
 def getInfo(text):

@@ -82,3 +82,4 @@ while True:
                 notify(player.name + " is now online on Hypixel!")
             else:
                 notify(player.name + " is now offline on Hypixel!")
+        time.sleep(3)
